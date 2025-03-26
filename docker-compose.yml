@@ -1,0 +1,12 @@
+services:
+  db:
+    image: opensearchproject/opensearch:latest
+    container_name: opensearch99
+    restart: always
+    tty: true
+    ports:
+      - "9200:9200"
+      - "9600:9599"
+    environment:
+      - discovery.type=single-node
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=Opensearch123
