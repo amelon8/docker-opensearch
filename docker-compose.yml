@@ -1,5 +1,5 @@
 services:
-  db:
+  opensearch-node1:
     image: opensearchproject/opensearch:latest
     container_name: opensearch99
     restart: always
@@ -10,3 +10,20 @@ services:
     environment:
       - discovery.type=single-node
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=Opensearch123
+    networks:
+      - opensearch-standalone-net
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: opensearch-dashboards
+    ports:
+      - 5601:5601
+    expose:
+      - '5601'
+    environment:
+      OPENSEARCH_HOSTS: '["https://opensearch-node1:9200"]'
+    networks:
+      - opensearch-standalone-net
+
+networks:
+  opensearch-standalone-net:

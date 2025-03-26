@@ -57,3 +57,6 @@ See https://hub.docker.com/r/opensearchproject/opensearch
     4d82cc619a37 opensearch-system-templates          2.19.1.0
     4d82cc619a37 query-insights                       2.19.1.0
     
+# Using OpenSearch Dashboards
+http://localhost:5601/
+
