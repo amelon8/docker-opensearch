@@ -6,7 +6,7 @@ services:
     tty: true
     ports:
       - "9200:9200"
-      - "9600:9599"
+      - "9600:9600"
     environment:
       - discovery.type=single-node
       - OPENSEARCH_INITIAL_ADMIN_PASSWORD=Opensearch123
